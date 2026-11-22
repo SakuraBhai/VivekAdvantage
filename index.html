@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIVEK ADVANTAGE | Digital Network</title>
+<meta name="theme-color" content="#070b19">
 
-<title>VIVEK ADVANTAGE</title>
-
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,198 +15,371 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2129522651707072');
-fbq('track', 'PageView');
+
+fbq('init','2129522651707072');
+fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2129522651707072&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2129522651707072&ev=PageView&noscript=1">
+</noscript>
+
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root {
+    --blue:#25c7ff;
+    --purple:#8955ff;
+    --bg:#070b19;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
+    overflow-x:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+    color:white;
     background:
-        radial-gradient(ellipse at 50% 5%, #281044 0%, transparent 50%),
-        radial-gradient(ellipse at 0% 100%, #102548 0%, transparent 55%),
-        linear-gradient(135deg, #050712, #0b0b1b 55%, #21102f);
-    overflow-x: hidden;
+    radial-gradient(ellipse at 50% 10%,#142b56 0%,transparent 45%),
+    radial-gradient(ellipse at 100% 100%,#321450 0%,transparent 45%),
+    #070b19;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
+/* Digital grid */
+
+body:before {
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
     background-image:
-        radial-gradient(#744cff 1px, transparent 1px),
-        radial-gradient(#168dff 1px, transparent 1px);
-    background-size: 170px 170px, 230px 230px;
-    background-position: 20px 30px, 100px 110px;
-    opacity: .22;
+    linear-gradient(rgba(50,140,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(50,140,255,.055) 1px,transparent 1px);
+    background-size:42px 42px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
 }
+
+/* Digital particles */
+
+.particles {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.55;
+    background-image:
+    radial-gradient(circle,#38caff 1px,transparent 1.5px),
+    radial-gradient(circle,#995dff 1px,transparent 1.5px);
+    background-size:110px 110px,170px 170px;
+    background-position:20px 30px,80px 90px;
+    animation:particleMove 25s linear infinite;
+}
+
+@keyframes particleMove {
+    to {background-position:220px 230px,-90px 190px;}
+}
+
+/* Main */
 
 .wrapper {
-    width: 100%;
-    max-width: 370px;
-    position: relative;
-    z-index: 1;
+    width:100%;
+    max-width:410px;
+    position:relative;
+    z-index:2;
+    animation:enter .8s ease both;
+}
+
+@keyframes enter {
+    from {opacity:0;transform:translateY(25px);}
+    to {opacity:1;transform:translateY(0);}
 }
 
 .card {
-    text-align: center;
-    padding: 30px 22px 25px;
-    border-radius: 22px;
-    border: 1px solid rgba(139,67,255,.35);
-    background: rgba(10,12,30,.91);
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    padding:29px 24px 24px;
+    border:1px solid rgba(78,156,255,.32);
+    border-radius:23px;
+    background:linear-gradient(
+        145deg,
+        rgba(15,29,57,.96),
+        rgba(8,12,29,.97) 60%,
+        rgba(24,13,49,.97)
+    );
     box-shadow:
-        0 0 45px rgba(105,45,255,.15),
-        0 0 90px rgba(130,40,255,.08);
+    0 0 45px rgba(35,126,255,.13),
+    0 25px 90px rgba(0,0,0,.55),
+    inset 0 1px rgba(255,255,255,.09);
 }
 
-.brand {
-    margin-bottom: 20px;
-    color: #54caff;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 4px;
+.card:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:10%;
+    width:80%;
+    height:2px;
+    background:linear-gradient(
+    90deg,transparent,#29d4ff,#9c5bff,transparent);
+    box-shadow:0 0 18px #27aaff;
 }
+
+/* Header */
+
+.top-label {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:25px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:3px;
+    color:#8ddfff;
+}
+
+.top-label i {
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#32e6a4;
+    box-shadow:0 0 12px #32e6a4;
+}
+
+/* Logo */
 
 .logo-area {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    display:flex;
+    justify-content:center;
+    margin-bottom:22px;
 }
 
 .logo {
-    width: 116px;
-    height: 116px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 4px solid #8148ff;
-    background: radial-gradient(circle,#29204b,#080b19 75%);
+    width:112px;
+    height:112px;
+    border-radius:27px;
+    padding:3px;
+    transform:rotate(-5deg);
+    background:linear-gradient(135deg,#26d6ff,#7754ff,#d45aff);
     box-shadow:
-        0 0 15px #884aff,
-        0 0 35px rgba(68,110,255,.8),
-        0 0 55px rgba(145,65,255,.4);
+    0 0 20px rgba(50,153,255,.5),
+    0 0 55px rgba(129,70,255,.25);
+    animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    50% {transform:rotate(0deg) translateY(-5px);}
 }
 
 .logo-inner {
-    width: 96px;
-    height: 96px;
-    border: 2px solid #ff405d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(145deg,#25203c,#080a16);
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:24px;
+    background:linear-gradient(145deg,#132b53,#090e21);
+    border:1px solid rgba(255,255,255,.2);
 }
 
 .logo-text {
-    font-size: 27px;
-    font-weight: 1000;
-    color: white;
-    text-shadow: 0 0 10px #a76aff, 0 0 20px #573cff;
+    font-size:40px;
+    font-weight:1000;
+    letter-spacing:-4px;
+    text-shadow:0 0 20px #30aaff;
 }
 
 .logo-text span {
-    color: #ff426b;
+    color:#a56aff;
 }
+
+/* Heading */
 
 h1 {
-    font-size: 30px;
-    font-weight: 1000;
-    letter-spacing: 1px;
-    background: linear-gradient(100deg,#fff,#c6a3ff,#8e7aff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    font-size:29px;
+    font-weight:1000;
+    letter-spacing:.5px;
+    background:linear-gradient(90deg,#fff,#80dfff,#b38aff);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.line {
-    width: 55px;
-    height: 2px;
-    margin: 0 auto 14px;
-    background: linear-gradient(90deg,#a13dff,#24caff);
+.subheading {
+    margin-top:10px;
+    color:#7dcfff;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:3px;
 }
+
+.divider {
+    width:55px;
+    height:3px;
+    margin:19px auto;
+    border-radius:10px;
+    background:linear-gradient(90deg,#27d4ff,#9955ff);
+    box-shadow:0 0 14px #348bff;
+}
+
+.description {
+    color:#aab8d2;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* Digital feature tags */
+
+.features {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:21px 0;
+}
+
+.feature {
+    padding:8px 11px;
+    border:1px solid rgba(90,153,255,.24);
+    border-radius:8px;
+    background:rgba(45,99,173,.10);
+    color:#c5d9ff;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+/* Members */
 
 .members {
-    display: inline-block;
-    padding: 6px 14px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(151,75,255,.5);
-    border-radius: 30px;
-    background: rgba(110,47,180,.18);
-    font-size: 11px;
-    font-weight: 800;
-    color: #e7d8ff;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 16px;
+    margin-bottom:22px;
+    border-radius:30px;
+    border:1px solid rgba(94,157,255,.3);
+    background:rgba(51,115,196,.12);
+    font-size:12px;
+    color:#d9e9ff;
+    font-weight:800;
 }
+
+.online {
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#35f3a4;
+    box-shadow:0 0 10px #35f3a4;
+}
+
+/* CTA */
 
 .join-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    width: 100%;
-    min-height: 56px;
-    padding: 15px 12px;
-    border-radius: 13px;
-    border: 1px solid rgba(255,255,255,.22);
-    background: linear-gradient(110deg,#9345ed,#7138ed,#3876ed);
-    box-shadow: 0 8px 28px rgba(116,58,255,.42);
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 1000;
-    letter-spacing: 1.5px;
-    transition: .25s;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    width:100%;
+    min-height:59px;
+    padding:16px 12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:12px;
+    background:linear-gradient(105deg,#087fce,#1768dc,#7144e9);
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:1000;
+    letter-spacing:1.4px;
+    box-shadow:
+    0 8px 30px rgba(28,116,245,.3),
+    inset 0 1px rgba(255,255,255,.25);
+    transition:.3s;
 }
+
+.join-btn:before {
+    content:"";
+    position:absolute;
+    inset:0;
+    left:-110%;
+    width:60%;
+    background:linear-gradient(
+    90deg,transparent,rgba(255,255,255,.25),transparent);
+    transform:skewX(-25deg);
+    transition:.7s;
+}
+
+.join-btn:hover:before {left:150%;}
 
 .join-btn:hover {
-    transform: translateY(-3px);
+    transform:translateY(-4px);
+    box-shadow:0 12px 38px rgba(41,139,255,.48);
 }
 
-.join-btn:active {
-    transform: scale(.97);
+.join-btn:active {transform:scale(.97);}
+
+.wa-icon {
+    width:21px;
+    height:21px;
+    fill:white;
 }
 
 .arrow {
-    font-size: 19px;
+    font-size:19px;
+    transition:.3s;
+}
+
+.join-btn:hover .arrow {
+    transform:translateX(5px);
 }
 
 .note {
-    margin-top: 15px;
-    color: #817d9e;
-    font-size: 11px;
-    line-height: 1.5;
+    margin-top:15px;
+    color:#8797b6;
+    font-size:10px;
+    line-height:1.7;
 }
 
-@media(max-width:400px) {
-    .wrapper {
-        max-width: 350px;
-    }
+/* Footer */
 
-    .card {
-        padding: 28px 18px 23px;
-    }
+.footer {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:23px;
+    padding-top:17px;
+    border-top:1px solid rgba(255,255,255,.09);
+    color:#7586a5;
+    font-size:9px;
+    letter-spacing:1px;
+}
 
-    h1 {
-        font-size: 27px;
+.footer strong {
+    color:#81caff;
+}
+
+@media(max-width:420px) {
+    .wrapper {max-width:370px;}
+    .card {padding:26px 19px 22px;}
+    h1 {font-size:26px;}
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation:none!important;
+        transition:none!important;
     }
 }
 </style>
@@ -213,42 +387,76 @@ h1 {
 
 <body>
 
-<div class="wrapper">
-    <div class="card">
+<div class="particles"></div>
 
-        <div class="brand">◆ VIVEK ADVANTAGE ◆</div>
+<main class="wrapper">
+<section class="card">
 
-        <div class="logo-area">
-            <div class="logo">
-                <div class="logo-inner">
-                    <div class="logo-text">T<span>S</span></div>
-                </div>
+    <div class="top-label">
+        <i></i>
+        DIGITAL NETWORK
+        <i></i>
+    </div>
+
+    <div class="logo-area">
+        <div class="logo">
+            <div class="logo-inner">
+                <div class="logo-text">T<span>S</span></div>
             </div>
         </div>
-
-        <h1>VIVEK ADVANTAGE</h1>
-
-        <div class="line"></div>
-
-        <div class="members">2,845+ Members</div>
-
-        <a
-            class="join-btn"
-            href="https://whatsapp.com/channel/0029Vb8v7EVL2ATztwAs1s3J"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="if(typeof fbq === 'function') { fbq('track', 'Lead'); }"
-        >
-            JOIN CHANNEL
-            <span class="arrow">➤</span>
-        </a>
-
-        <div class="note">
-            Tap to open Telegram and send your request.
-        </div>
-
     </div>
-</div>
+
+    <h1>VIVEK ADVANTAGE</h1>
+
+    <div class="subheading">
+        CONNECT • DISCOVER • GROW
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="description">
+        Welcome to the VIVEK ADVANTAGE digital community.
+        Connect with us and stay updated with the latest information.
+    </p>
+
+    <div class="features">
+        <div class="feature">✦ DIGITAL UPDATES</div>
+        <div class="feature">◈ COMMUNITY</div>
+        <div class="feature">⚡ INSTANT ACCESS</div>
+    </div>
+
+    <div class="members">
+        <span class="online"></span>
+        2,845+ COMMUNITY MEMBERS
+    </div>
+
+    <a
+        class="join-btn"
+        href="https://whatsapp.com/channel/0029Vb8v7EVL2ATztwAs1s3J"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="if(typeof fbq==='function')fbq('track','Lead');"
+    >
+        <svg class="wa-icon" viewBox="0 0 24 24">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.49 0 .13 5.36.13 11.94c0 2.1.55 4.15 1.6 5.96L0 24l6.25-1.64a11.9 11.9 0 0 0 5.82 1.48h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.5-8.42ZM12.08 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.9-9.9 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 0 1 2.9 7c0 5.46-4.45 9.9-9.93 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+        </svg>
+
+        JOIN OFFICIAL CHANNEL
+        <span class="arrow">➜</span>
+    </a>
+
+    <p class="note">
+        One tap. Direct connection.<br>
+        Join our WhatsApp community today.
+    </p>
+
+    <div class="footer">
+        <span>VIVEK ADVANTAGE</span>
+        <strong>● DIGITAL EXPERIENCE</strong>
+    </div>
+
+</section>
+</main>
 
 </body>
 </html>
